@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title> <!-- Another type of value in JS; only two values. True and False. -->
+</head>
+<body>
+    <script>
+    /* // a boolean value represents whether something is true or false.
+        true
+        false
+
+        console.log(3 < 5); // Output: TRUE
+        console.log(3 > 5); // Output: FALSE
+
+        console.log(5 == '5.00'); // double == will try to convert the string into a value; making the output: true.
+        console.log(5 === '5.00'); // triple === will detect that this is a value and a string; making the output: false.
+
+        if(false) {
+            console.log('hello'); // if the boolean value is true, it will run the code within the brackets. 
+        } else {
+            console.log('goodbye') // If its false, it will skip over the ('hello') and run the ('goodbye') instead.
+        }
+
+        const age = 15; // we can save 15 as a variable of "age", and use this over and over again.
+
+        if (age >= 16) { // if the value is less than 16, it will skip over the first console.log.
+            console.log('You can drive!');
+            console.log('Congrats!');
+        } else if (age >= 14) {
+            console.log('You are almost allowed to drive.');
+        } else { // we can add multiple conditions to an else-if statement.
+            console.log('You are not old enough');
+        }
+        */
+        /*
+        console.log(true && true); // AND operator; checks if two boolean operators are TRUE. If one side is false, then the result would be FALSE.
+        console.log(0.2 >= 0 && 0.2 < 1 / 3); // Here, we are checking if 0.2 is greater than or equal to one, and then we are also check is 0.2 is less than or equal to 1 / 3. In this case, its TRUE.
+        
+        console.log(true || false); // displays 'true' since at least one side is true.
+
+        console.log(!true); // displays 'false' since !true is basically saying 'not true'.
+        */
+       
+        /*
+        if (5) {
+            console.log('truthy'); // five behaves just like true; 'truthy' behaves just like true as well.
+        }
+        if (0) {
+            console.log('falsy'); // zero behaves like false; or a "falsy" value.
+        }
+
+        const cartQuantity = 5;
+
+        if(cartQuantity) {
+            console.log('cart has products');
+        }
+
+        console.log(!0); // this would flip the false value of 0, to true.
+
+        console.log('text' / 5); // NaN
+
+        let variable1;
+        console.log(variable1); // undefined; because we did NOT give variable1 a value. IMPORTANT, we can only use "let" with undefined.
+        */
+
+        /*
+        const result = true ? 'truthy' : 'falsy' // Ternary Operator; the ? is the 'if' branch. If the condition is true, it will pick the first available value. If its false, it will skip over to the next one.
+        console.log(result); // Output: truthy; if we change 'true' to a falsy value, it will return falsy. Ex. 0
+
+        false && console.log('hello'); // we can use this as a "guard" operator; this will block the second value, and return a falsy statement.
+
+        const message = false && 'hello';
+        console.log(message); // Output: false. If we change "false" to a truthy value like 5, it will skip over 5, and choose "hello."
+
+        const currency = undefined || 'USD'; // the left side is 'truthy'. If we don't choose a currency, then USD will be chosen. We can use the OR operator to select a default operator.
+        console.log(currency);
+        */
+    </script>
+</body>
+</html>
+
+<!-- Syntax Rules for Booleans 
+ > To create a boolean, you just type "true" or "false"
+ > use can use "typeof" to check this. Ex. console.log(typeof true); the output is "boolean" 
+ > Comparison Operators:">" "<" ">=" "<=" "===" "!==" 
+ > if-statement: lets us write multiple groups of code, and then decide which code to run. 
+    > if-statement syntax is this: if (condition) if the condition is true, we will run the condition within the brackets. the else statement is optional, it will run if the condition is false.
+> AND (&&) OPERATOR; checks if two boolean operators are TRUE. If one side is false, then the result would be FALSE. 
+> OR (||) OPERATOR; checks if AT LEAST one side is true.
+> NOT (!) OPERATOR; only uses one boolean value, and flips it to another value. Ex. !true would be false.
+> Scope: limits where a variable exists; any variable within the curly brackets, will exist ONLY in the curly brackets. -->
+
+<!-- Falsy Values: false, 0, '', NaN (Not a Number), undefined, null. -->
