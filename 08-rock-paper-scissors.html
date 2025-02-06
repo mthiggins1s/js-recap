@@ -26,12 +26,16 @@
         playGame('scissors');
     ">Scissors</button>
 
+    <button onclick=" // code to reset the score back to zero; we set all the scores back to 0 via click.
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    ">Reset Score</button>
+
     <script>
-        const score = {
-            wins: 0,
-            losses: 0,
-            ties: 0
-        };
+        const score = JSON.parse(localStorage.getItem('score'));
+
+        // console.log(); // we use the string that is the name of the string, which was 'message'. Output: 'hello' and we pulled this out of localStorage. adding JSON.parse will convert our JSON string back into an object.
 
         function playGame(playerMove) {
             const computerMove = pickComputerMove(); // Output is 'rock'; we are getting a value out of this function. The result of 'rock' is at the bottom of the page.
@@ -54,7 +58,7 @@
         } else if (computerMove === 'scissors') {
             result = 'You lose.';
         }
-        } else if (computerMove === 'rock') {
+        } else if (playerMove === 'rock') {
             if(computerMove === 'rock') {
             result = 'Tie.';
         } else if (computerMove === 'paper') {
@@ -72,8 +76,12 @@
         } else if (result === 'Tie.') {
             score.ties += 1;
         }
+
+        localStorage.setItem('score', JSON.stringify(score)); // localStorage only reads strings, so we just JSON.stringify if convert the score into a string.
     
-    alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+        // we will use a multi-line string with the backticks to add the score to the popup.
+        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
         }
 
         function pickComputerMove() {

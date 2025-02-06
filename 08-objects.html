@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+        /*
         const product = { // this is our object.
             name: 'socks', // values for the object. the 'name' and 'price' are known as the "property"; we can access certain values in the object.
             price: '1090'
@@ -23,6 +24,31 @@
 
         delete product.newProperty;
         console.log(product); // this will delete newProperty from the object.
+        */
+
+        const product2 = {
+            name: 'shirt', 
+            'delivery-time': '1 day', // this lets us add a delivery time to our product.
+            rating: { // nested object; object within an object.
+                stars: 4.5,
+                count: 87
+            },
+            fun: function function1() {
+                console.log('function inside object')
+            }
+        };
+        console.log(product2);
+        console.log(product2.name); // this will access the value associated with the name property
+        console.log(product2['name']); // this is 'bracket notation'. does the same thing as dot notation, expect it allows us to use properties that normally dont work with dot notation.
+
+        console.log(product2['delivery-time']); // we use bracket notation here because dot notation think the dash is us trying to subtact delivery and time. Output: undefined.
+        console.log(product2.rating.count); // this gets the value associated with the rating object. Output: 87
+        product2.fun(); // this will the run the function and display 'function inside object.'
+        console.log(typeof console.log); // this will confirm that console is an object, and console.log is a function.
+
+        console.log(JSON.stringify(product2)); // stringify is a method of JSON; its a function saved within the object. This will convert 'product2' into JSON syntax. The result is a string.
+        const jsonString = JSON.stringify(product2)
+        console.log(JSON.parse(jsonString)); // this will convert the JSON string back into a JS object.
     </script>
 </body>
 </html>
@@ -31,4 +57,11 @@
  > an Object lets us group multiple values together.
     > to create an object, we start with an open curly bracket and end with a closed curly bracket; we can have multiple values and each value will have a property to the left of it, which is how we access it. They will be separated by a comma.
 > the notation we use for identifying the value of a property is called 'dot notation.' Example. product.name > We use objects to organize our code, since we can group all the values into one object.
-> We can console.log the whole object together. -->
+> We can console.log the whole object together.
+> a Method is a function inside an object.
+> JSON: JavaScript Object Notation: a syntax that is similar to a JS object and has less features.
+    > JSON does NOT support functions.
+    > We use JSON syntax can be understood by almost every programming language, so its more universal.
+    > We also use JSON to store data.
+> Built-in JSON object: helps us CONVERT a JS object to JSON.
+> localStorage: save values more permanently -->
