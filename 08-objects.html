@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        const product = { // this is our object.
+            name: 'socks', // values for the object. the 'name' and 'price' are known as the "property"; we can access certain values in the object.
+            price: '1090'
+        };
+        console.log(product);
+        console.log(product.name); // this will access the value of the 'name' property, which is "socks".
+        console.log(product.price);
+
+        product.name = 'cotton socks'; // this will change the value associated with the name value.
+        console.log(product); // the name property has now been changed to 'cotton socks'.
+
+        product.newProperty = true;
+        console.log(product); // this will add the value to the object.
+
+        delete product.newProperty;
+        console.log(product); // this will delete newProperty from the object.
+    </script>
+</body>
+</html>
+
+<!-- Syntax for Objects
+ > an Object lets us group multiple values together.
+    > to create an object, we start with an open curly bracket and end with a closed curly bracket; we can have multiple values and each value will have a property to the left of it, which is how we access it. They will be separated by a comma.
+> the notation we use for identifying the value of a property is called 'dot notation.' Example. product.name > We use objects to organize our code, since we can group all the values into one object.
+> We can console.log the whole object together. -->
