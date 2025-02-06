@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+       // function function1() { // this creates a function. The code below is the body. *IMPORTANT* this code will not run unless we call the function by typing 'function1();' outside of the function itself.
+       //     console.log('hello');
+       //     console.log(2 + 2);
+       //  }
+
+        // function1(); // this will run the code inside the function. Output: hello and 4.
+        function calculateTax(cost, taxPercent = 0.1) { // our parameter is within the brackets.
+            console.log(cost * taxPercent); // replacing 1000 with our parameter will substitute 1000 with 2000. taxPercent now has a default value of 0.1 in our parameter.
+        }
+        calculateTax(2000, 0.20); // Output: 100 cents; we then put the value of our parameter into the function brackets. Our new output is 200 cents. With a second parameter, it now adds a taxPercent.
+        calculateTax(5000); // Output: 500 cents.
+    </script>
+</body>
+</html>
+
+<!-- Functions notes and syntax 
+ > a function; lets us re-use code. So if we wanted to re-use it, we just type the function name again with (); .
+ > the word "function()" creates a new function, and then we choose a name for said function. We cannot use special characters, cannot start with a number. Best practice is camelCase.
+ > Return Statement: lets us get a value out of a function.
+    > Syntax for Return Statement: just type return and then a value. Ex. return 'rock' or return variable1. 
+> Parameters: opposite of a return statement; puts a value INTO a function.
+    > Syntax rules for Parameters: to create a parameter, we just put the parameter name within the brackets. Just like functions, we cannot use special words and cannot start with a number or special characters (excluding $ and _)
+    > IMPORTANT: WE CAN HAVE MORE THAN 1 PARAMETER -->
