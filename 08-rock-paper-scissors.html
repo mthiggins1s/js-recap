@@ -30,10 +30,25 @@
     score.wins = 0;
     score.losses = 0;
     score.ties = 0;
+    localStorage.removeItem('score'); // doing this will give us an error due to us removing the score from localStorage.
     ">Reset Score</button>
 
     <script>
-        const score = JSON.parse(localStorage.getItem('score'));
+         // updating this will now allow the Reset Score button to reset the score upon clicking and then resetting the page.
+        let score = JSON.parse(localStorage.getItem('score')) ||  {
+                wins: 0,
+                losses: 0,
+                ties: 0
+            }; 
+            /*
+        if (!score) { // !(not) score will work too since it will flip the score to true.
+            score = {
+                wins: 0,
+                losses: 0,
+                ties: 0
+            };
+        }
+            */
 
         // console.log(); // we use the string that is the name of the string, which was 'message'. Output: 'hello' and we pulled this out of localStorage. adding JSON.parse will convert our JSON string back into an object.
 

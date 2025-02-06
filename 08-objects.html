@@ -25,7 +25,7 @@
         delete product.newProperty;
         console.log(product); // this will delete newProperty from the object.
         */
-
+        /*
         const product2 = {
             name: 'shirt', 
             'delivery-time': '1 day', // this lets us add a delivery time to our product.
@@ -49,6 +49,46 @@
         console.log(JSON.stringify(product2)); // stringify is a method of JSON; its a function saved within the object. This will convert 'product2' into JSON syntax. The result is a string.
         const jsonString = JSON.stringify(product2)
         console.log(JSON.parse(jsonString)); // this will convert the JSON string back into a JS object.
+        */
+
+        console.log('hello'.length); // length property tells us how many characters are in the property. Output: 5
+        console.log('hello'.toUpperCase()) // Output: HELLO
+        const object1 = { // this is a reference, it points to the location in the memory where the object is.
+            message: 'hello'
+        };
+        const object2 = object1; // this does NOT make a copy of the code, just the reference.
+
+        object1.message = 'Good job!';
+        console.log(object1); // we were able to change the message property since this changes a reference. it does NOT prevent us from reaching in and changing the value in the object.
+        console.log(object2);
+
+        const object3 = {
+            message: 'Good job!'
+        };
+        console.log(object3 === object1); // Output: false; these objects are NOT equal because they are references, and this is comparing the references, and NOT the values within the object.
+        console.log(object2 === object1); // Output: true; because object2 has the same reference as object1.
+
+        const object4 = { // goal: get the message property out of the object.
+            message: 'Good job!',
+            price: 799
+        };
+        // const message = object4.message;
+        const { message, price } = object4; // this is called 'destructing'
+        console.log(message); // Output: Good job!
+        console.log(price); // Ouput: 799
+
+        const object5 = {
+           // message: message
+            message,
+           // method: function function1() {
+           //     console.log('method');
+           // }
+            method() { // this is shortcut for above code; shorthand method syntax.
+                console.log('method');
+            }
+        };
+        console.log(object5); // displays whatever is in the message variable, which is "Good job!"
+        object5.method(); // Output: method
     </script>
 </body>
 </html>
@@ -64,4 +104,7 @@
     > We use JSON syntax can be understood by almost every programming language, so its more universal.
     > We also use JSON to store data.
 > Built-in JSON object: helps us CONVERT a JS object to JSON.
-> localStorage: save values more permanently -->
+> localStorage: save values more permanently.
+> null: use it when we WANT something to be empty
+> auto-boxing: automatically wraps the string in a object.(works with numbers and booleans, doesnt work with null or undefined) 
+    > OBJECTS ARE REFERENCES -->
