@@ -6,6 +6,14 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
+
+    <!-- Algorithm (Rock Paper Scissors Game)
+     > When we click a button:
+        > computer randomly selects a move
+        > compare the moves to get the result
+        > update the score
+        > display the result in a popup -->
+
     <p> Rock Paper Scissors </p> <!-- Paragraph Text -->
     <button onclick="
         playGame('rock');
@@ -19,6 +27,12 @@
     ">Scissors</button>
 
     <script>
+        const score = {
+            wins: 0,
+            losses: 0,
+            ties: 0
+        };
+
         function playGame(playerMove) {
             const computerMove = pickComputerMove(); // Output is 'rock'; we are getting a value out of this function. The result of 'rock' is at the bottom of the page.
 
@@ -48,6 +62,15 @@
         } else if (computerMove === 'scissors') {
             result = 'You win.';
         }
+        }
+
+        // update the score
+        if(result === 'You win.') {
+            score.wins += 1;
+        } else if (result === 'You lose.') {
+            score.losses += 1;
+        } else if (result === 'Tie.') {
+            score.ties += 1;
         }
     
     alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
